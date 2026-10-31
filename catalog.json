@@ -2,8 +2,15 @@
   "com.receptor.downloadmanager": {
     "depiction": "depictions/receptor.html",
     "icon": "icons/receptor.png",
+    "package_icon": "file:///Library/JajaEngland/Icons/Receptor.png",
     "source": "https://github.com/jajaengland/Receptor",
     "stage": "Experimental",
     "compatibility": "Targets iOS 4.0–6.1, armv7. User-reported downloads and one successful app launch on iPad 1 / iOS 5.1.1; two other app launch failures remain unresolved. DEB installation is not yet confirmed on-device."
+  },
+  "com.jajaengland.repoicons": {
+    "depiction": "depictions/repo-icons.html",
+    "icon": "CydiaIcon.png",
+    "package_icon": "file:///Library/JajaEngland/Icons/Repo.png",
+    "compatibility": "Local icons for legacy Cydia. Install once to show custom package-list icons before installing individual tweaks."
   }
 }

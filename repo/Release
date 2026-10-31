@@ -1,0 +1,22 @@
+Origin: JajaEngland
+Label: JajaEngland
+Suite: stable
+Codename: jajaengland
+Version: 1.0
+Architectures: all iphoneos-arm
+Components: main
+Description: Tweaks and apps by JajaEngland
+Icon: https://jajaengland.github.io/repo/CydiaIcon.png
+Date: Sat, 31 Oct 2026 20:53:55 GMT
+MD5Sum:
+ 824be00d6b0b7027501f5c6dc863d157 4415 Packages
+ 1476e692320305bd7defa0db8f30a1c1 1187 Packages.gz
+ 08c3e2cbc4b44e5c2883a6d32891cfe5 1424 Packages.bz2
+SHA1:
+ 6b31c96c9138650d0d00a19fca02a31b4fecced8 4415 Packages
+ def2009cb5164753029cfebbf7481c764b5e5ef6 1187 Packages.gz
+ 9cb1d8707ce14e79f773789d6c5a57de7741c9bc 1424 Packages.bz2
+SHA256:
+ d8a97f0f6b4ec1ccf172d013677167f43e6dfe426ce5b62c6ad54be5c6f934cb 4415 Packages
+ eac7c659d43420aed1d80fbe3c7f2e8ea15e5f0fd519dc8134ab4664079ee2b4 1187 Packages.gz
+ 7bb9e50c7eafe818b96496b669e5b3f4e57fbfe48b0402eb53e2f089de6fc9a9 1424 Packages.bz2

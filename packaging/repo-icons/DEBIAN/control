@@ -1,0 +1,11 @@
+Package: com.jajaengland.repoicons
+Name: JajaEngland Repository Icons
+Version: 1.0
+Architecture: all
+Maintainer: JajaEngland
+Author: JajaEngland
+Section: Repositories
+Description: Local package icons for JajaEngland's legacy Cydia repository.
+Homepage: https://jajaengland.github.io/repo/
+Depiction: https://jajaengland.github.io/repo/depictions/repo-icons.html
+Icon: file:///Library/JajaEngland/Icons/Repo.png

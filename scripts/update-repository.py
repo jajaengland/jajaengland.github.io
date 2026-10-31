@@ -14,6 +14,7 @@ import json
 import html
 
 ROOT = Path(__file__).resolve().parent.parent
+OUTPUT = ROOT / "repo"
 
 
 def control_text(path):
@@ -97,7 +98,25 @@ def write_homepage(config, catalog, indexed):
     url = escape(config["url"], quote=True)
     template = (ROOT / "index.template.html").read_text(encoding="utf-8")
     output = template.replace("{{TITLE}}", escape(config["label"])).replace("{{SOURCE_URL}}", url).replace("{{PACKAGES}}", "\n".join(cards))
-    (ROOT / "index.html").write_text(output, encoding="utf-8", newline="\n")
+    (OUTPUT / "index.html").write_text(output, encoding="utf-8", newline="\n")
+
+
+def write_indexes(output, packages, config, architectures):
+    (output / "Packages").write_bytes(packages)
+    (output / "Packages.gz").write_bytes(gzip.compress(packages, mtime=0))
+    (output / "Packages.bz2").write_bytes(bz2.compress(packages))
+    release = [
+        "Origin: " + config["origin"], "Label: " + config["label"], "Suite: stable", "Codename: " + config["codename"],
+        "Version: 1.0", "Architectures: " + " ".join(sorted(architectures)), "Components: main",
+        "Description: " + config["description"], "Icon: " + config["url"] + config["icon"],
+        "Date: " + format_datetime(datetime.now(timezone.utc), usegmt=True),
+    ]
+    for title, algorithm in [("MD5Sum", "md5"), ("SHA1", "sha1"), ("SHA256", "sha256")]:
+        release.append(title + ":")
+        for name in ["Packages", "Packages.gz", "Packages.bz2"]:
+            data = (output / name).read_bytes()
+            release.append(" %s %d %s" % (digest(data, algorithm), len(data), name))
+    (output / "Release").write_text("\n".join(release) + "\n", encoding="utf-8", newline="\n")
 
 
 def main():
@@ -106,7 +125,7 @@ def main():
     args = parser.parse_args()
     config = json.loads((ROOT / "repository.json").read_text(encoding="utf-8"))
     catalog = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
-    output = ROOT
+    output = OUTPUT
     pool = output / "debs"
     pool.mkdir(parents=True, exist_ok=True)
     if args.package:
@@ -140,9 +159,10 @@ def main():
         meta = catalog.get(fields["Package"], {})
         # Repository depictions/icons may move without altering released .deb bytes.
         for field, key in [("Depiction", "depiction"), ("Icon", "icon")]:
-            if meta.get(key):
+            if meta.get(key) or (field == "Icon" and meta.get("package_icon")):
                 control = "\n".join(line for line in control.splitlines() if not line.startswith(field + ":"))
-                control += "\n" + field + ": " + config["url"] + meta[key]
+                value = meta["package_icon"] if field == "Icon" and meta.get("package_icon") else config["url"] + meta[key]
+                control += "\n" + field + ": " + value
         fields["Filename"] = path.relative_to(output).as_posix()
         indexed.append(fields)
         entries.append(control + "\n" + "\n".join([
@@ -153,21 +173,12 @@ def main():
             "SHA256: " + digest(data, "sha256"),
         ]))
     packages = ("\n\n".join(entries) + "\n\n").encode("utf-8")
-    (output / "Packages").write_bytes(packages)
-    (output / "Packages.gz").write_bytes(gzip.compress(packages, mtime=0))
-    (output / "Packages.bz2").write_bytes(bz2.compress(packages))
-    release = [
-        "Origin: " + config["origin"], "Label: " + config["label"], "Suite: stable", "Codename: " + config["codename"],
-        "Version: 1.0", "Architectures: " + " ".join(sorted(architectures)), "Components: main",
-        "Description: " + config["description"],
-        "Date: " + format_datetime(datetime.now(timezone.utc), usegmt=True),
-    ]
-    for title, algorithm in [("MD5Sum", "md5"), ("SHA1", "sha1"), ("SHA256", "sha256")]:
-        release.append(title + ":")
-        for name in ["Packages", "Packages.gz", "Packages.bz2"]:
-            data = (output / name).read_bytes()
-            release.append(" %s %d %s" % (digest(data, algorithm), len(data), name))
-    (output / "Release").write_text("\n".join(release) + "\n", encoding="utf-8", newline="\n")
+    write_indexes(output, packages, config, architectures)
+    # Existing users of the previous root source keep receiving packages.
+    # Prefix their relative filenames rather than duplicating new package files.
+    compatibility = packages.replace(b"Filename: debs/", b"Filename: repo/debs/")
+    write_indexes(ROOT, compatibility, config, architectures)
+    shutil.copyfile(output / config["icon"], ROOT / "CydiaIcon.png")
     (output / ".nojekyll").touch()
     write_homepage(config, catalog, indexed)
     print("Updated flat Cydia repository: " + str(output))
