@@ -28,7 +28,7 @@ The generator accepts any package ID and derives architecture metadata from the 
 
 For a package icon, depiction, source link or compatibility/testing note, add an entry keyed by package ID to `catalog.json`. Web image/HTML paths are relative to `repo/`. `icon` selects the website image, while `package_icon` can specify a local `file:///` path for Cydia's package list. Packages without catalog entries still appear with their name, description, architecture and direct download. The index can override Depiction/Icon fields without rebuilding already released packages. Change repository branding in `repository.json` and layout in `index.template.html`. Run `python3 scripts/update-repository.py` with no package argument to rebuild existing contents.
 
-The old icons package and Receptor 1.2.1 (which required it) are retired from the active indexes. Their immutable archives and packaging source remain for historical releases. Existing users can upgrade to Receptor 1.2.2 and remove the old icons package through Cydia.
+The old icons package has been removed from the repository, including its downloadable archive and packaging source. Receptor 1.2.1 (which required it) is excluded from the active indexes. Existing users can upgrade to Receptor 1.2.2 and remove the old icons package through Cydia.
 
 ## Hosting and verification
 
