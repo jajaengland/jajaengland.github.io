@@ -149,6 +149,8 @@ def main():
         data = path.read_bytes()
         control = control_text(path)
         fields = fields_from_control(control)
+        if fields["Package"] in config.get("hidden_packages", []) or fields["Version"] in config.get("hidden_versions", {}).get(fields["Package"], []):
+            continue
         identity = (fields["Package"], fields["Version"], fields["Architecture"])
         checksum = digest(data, "sha256")
         if identity in seen and seen[identity] != checksum:

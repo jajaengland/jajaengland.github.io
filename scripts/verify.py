@@ -27,6 +27,8 @@ def main():
     identifiers = set()
     for entry in raw.decode().strip().split("\n\n"):
         fields = dict(line.split(": ", 1) for line in entry.splitlines() if line and not line[0].isspace() and ": " in line)
+        assert fields["Package"] not in config.get("hidden_packages", [])
+        assert fields["Version"] not in config.get("hidden_versions", {}).get(fields["Package"], [])
         relative = Path(fields["Filename"])
         assert not relative.is_absolute() and ".." not in relative.parts
         data = (OUTPUT / relative).read_bytes()
@@ -52,6 +54,7 @@ def main():
     assert "Origin: " + config["origin"] in (OUTPUT / "Release").read_text()
     assert "Icon: " + config["url"] + config["icon"] in (OUTPUT / "Release").read_text()
     paths.add(config["icon"])
+    if (OUTPUT / "CydiaIcon@2x.png").exists(): paths.add("CydiaIcon@2x.png")
     for meta in catalog.values():
         for key in ["depiction", "icon"]:
             if meta.get(key):
