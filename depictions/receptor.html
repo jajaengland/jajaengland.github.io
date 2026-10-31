@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Receptor · Package details</title>
+<style>body{font:16px/1.6 Helvetica,Arial,sans-serif;background:#f2f3f5;color:#202830;margin:0;padding:20px}main{max-width:640px;margin:auto}h1{font-size:32px}h2{font-size:20px}a{color:#167357}li{margin-bottom:8px}code{word-wrap:break-word}small{color:#52606c}</style>
+</head><body><main>
+<p><img src="../icons/receptor.png" width="72" height="72" alt="Receptor download icon"></p>
+<h1>Receptor</h1><p><small>Version 1.2.0 · Tweaks · iOS 4.0–6.1 · armv7</small></p>
+<p>A Safari download manager and a file explorer for legacy iOS.</p>
+<p><strong>Experimental release.</strong> User-reported testing on an iPad 1 with iOS 5.1.1: three IPA downloads completed and one app launched; two other app launch failures remain unresolved. DEB installation has not yet been confirmed on-device. iOS 4–6 is the intended target range, not a fully tested compatibility matrix.</p>
+<h2>Features</h2><ul>
+<li>Download prompts for file links and unsupported content in Safari.</li>
+<li>Up to three simultaneous downloads, progress display and cancellation.</li>
+<li>Files saved in <code>/var/mobile/Media/Receptor/</code>.</li>
+<li>Quick Look previews, document interaction and file deletion.</li>
+<li>Completion alerts and finite background execution.</li>
+<li>A standalone Home screen app with direct URL downloads.</li>
+<li>Bundled modern TLS with current CA roots and certificate verification.</li>
+<li>Install saved IPAs through the legacy iOS installer, after confirmation.</li>
+<li>Install saved DEBs through dpkg, view installation output, and manage them in Cydia.</li>
+</ul>
+<h2>Requirements</h2><p>Rootful jailbreak, Cydia Substrate, iOS 4.0–6.1 and an armv7 device. Safari must be allowed to write to the Receptor directory.</p>
+<h2>Using Receptor</h2><p>Tap a downloadable link in Safari and choose Download. Open Receptor from your Home screen to see active transfers or saved files. Tap + to paste a file URL. Tap an IPA or DEB and choose its Install action. Swipe a transfer to cancel it, or a saved file to delete it.</p>
+<h2>DEB installation</h2><p>Close Cydia before installing a DEB. Confirm the selected package; its scripts run as root. Successful installs appear in Cydia's Installed list after reopening it. Use Install Log for errors and Cydia to install missing dependencies. Receptor does not force an incompatible package or remove package-manager locks. Respring if the package requires it.</p>
+<h2>Release notes</h2><p>1.2.0: Adds confirmed local DEB installation, a fixed-operation root helper, Install Log and a Cydia shortcut.</p><p>1.1.1: Updates the icon. 1.1.0: Adds modern TLS downloads, the standalone app, shared transfer status/cancellation, URL entry and IPA installation. Physical-device validation is pending.</p>
+<h2>Limitations</h2><p>Downloads use HTTP(S) GET requests. There is no resume after the owning process exits. Keep the app that started a long download in the foreground. Receptor's TLS update does not change Safari's webpage networking or Cydia's repository networking. Unsigned IPAs may require a compatible AppSync setup. FairPlay authorization and device/iOS compatibility still apply.</p>
+<p><a href="https://github.com/jajaengland/Receptor/issues">Report an issue</a> · <a href="../">Repository home</a></p>
+</main></body></html>

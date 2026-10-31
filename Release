@@ -1,0 +1,21 @@
+Origin: JajaEngland
+Label: JajaEngland
+Suite: stable
+Codename: jajaengland
+Version: 1.0
+Architectures: iphoneos-arm
+Components: main
+Description: Tweaks and apps by JajaEngland
+Date: Sat, 31 Oct 2026 20:28:49 GMT
+MD5Sum:
+ 430c11fa739e6d7e84ad9a2d56af0bb1 2970 Packages
+ f7af2d3d7e89e24094092bdaae9bda75 842 Packages.gz
+ 878f3d09d9c87d5327e49d37ba4b3915 1005 Packages.bz2
+SHA1:
+ 7a5c0f173141c157240c2be72acc405f542abf3e 2970 Packages
+ cbafad02adc97bf61650ee6fe4370386ef4ca3f2 842 Packages.gz
+ 3a11180cac83fe0322767d3e60bdf7e871054c77 1005 Packages.bz2
+SHA256:
+ 012d2ddb12edf6e8138452081f340631afddce08b6a5c6ebd417323dcce3d673 2970 Packages
+ 45eb02f8fea5eb2195a5aa05ab398864e30e28bf7d18c66497d8ad2fb7dd33e7 842 Packages.gz
+ 305becd0271b866d520f4e23357c8e7aa27f1e43bf28a4954d98677fefabecdf 1005 Packages.bz2
