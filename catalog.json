@@ -4,7 +4,7 @@
     "icon": "icons/receptor.png",
     "package_icon": "file:///Applications/Receptor.app/Icon.png",
     "source": "https://github.com/jajaengland/Receptor",
-    "stage": "Experimental",
-    "compatibility": "Targets iOS 4.0–6.x (below 7.0), armv7. User-reported working on iOS 6.1.3 (device/feature scope unspecified), plus downloads and one app launch on iPad 1 / iOS 5.1.1. Two app launch failures remain unresolved; DEB installation and the new Photos/share/profile fixes are not yet confirmed on-device."
+    "stage": "Experimental — 32-bit iOS 7–8 beta",
+    "compatibility": "Targets 32-bit iOS 4.0–8.x (below 9.0). iOS 7–8 Safari/app-handoff/workspace installation are unvalidated test paths; arm64 Safari is not included. Earlier user reports cover iPad 1 / iOS 5.1.1 and iPad 4 / iOS 6.1.3, including restored native profile installation. IPA launch failures and DEB/device coverage remain incomplete."
   }
 }
