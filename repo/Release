@@ -7,16 +7,16 @@ Architectures: iphoneos-arm
 Components: main
 Description: Tweaks and apps by JajaEngland
 Icon: https://jajaengland.github.io/repo/CydiaIcon.png
-Date: Sun, 01 Nov 2026 16:26:01 GMT
+Date: Sun, 01 Nov 2026 16:46:13 GMT
 MD5Sum:
- fb275fb3be940e180dd5ba83ca05b1bb 8259 Packages
- 54748781fae2f9116a31cee6d2f77938 1672 Packages.gz
- 4af851f3fa91312d7612331b3f790222 1910 Packages.bz2
+ 76019238e01f78dc6ba83f10e3921279 9030 Packages
+ c1f0e00c38b447e18249c81abe31d635 1789 Packages.gz
+ 9489f54157b0bb0fa5e2fb924bf7dd4c 2011 Packages.bz2
 SHA1:
- 335bd137e73f0540e959171e5139add750f77e15 8259 Packages
- eed4efa5d049396b28ada9da313bb2967179e8e5 1672 Packages.gz
- da79a6cfcca913ed2ff7b074a256a39f6aa4e9a8 1910 Packages.bz2
+ 9d33245f6be9318d97e68b601fead9f7f79a653c 9030 Packages
+ eb6f5cd81b994dd7fd5c8e011387c8618d7238c5 1789 Packages.gz
+ 077f5903ef59f85d26c9d1d623cd66f883854d3c 2011 Packages.bz2
 SHA256:
- 3330a4961d557ef5da80e857a87aaa1678294b68c0d2d6d985ba7f622d343c0e 8259 Packages
- e61e1c3182be6bf2512286356edf5c8b0b41db43bdc5f1339671bbca27248c64 1672 Packages.gz
- 8200d89474b23bb76c8e2145c78b638ffe66a5f935072e6722223ad550199b2b 1910 Packages.bz2
+ 879cf25df50756d941e13a181f99ce1c3bbefea687b7c36a317fa0c23583c65c 9030 Packages
+ 2543c1872a988bece911f0e01c74dafda06a444706aac51c8e6b07b32e6cc151 1789 Packages.gz
+ 5a17c8f4cfbbdf8501544958c16531b5f42bfb93f67cf147df2b517cbcb5ceca 2011 Packages.bz2

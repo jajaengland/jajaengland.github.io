@@ -5,6 +5,14 @@
   "description": "Tweaks and apps by JajaEngland",
   "url": "https://jajaengland.github.io/repo/",
   "icon": "CydiaIcon.png",
-  "hidden_packages": ["com.jajaengland.repoicons"],
-  "hidden_versions": {"com.receptor.downloadmanager": ["1.2.1"]}
+  "hidden_packages": [
+    "com.jajaengland.repoicons"
+  ],
+  "hidden_versions": {
+    "com.receptor.downloadmanager": [
+      "1.2.1",
+      "1.5.0",
+      "1.6.0"
+    ]
+  }
 }
