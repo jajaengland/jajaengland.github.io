@@ -4,7 +4,7 @@
     "icon": "icons/receptor.png",
     "package_icon": "file:///Applications/Receptor.app/Icon.png",
     "source": "https://github.com/jajaengland/Receptor",
-    "stage": "Beta 3 — manual Respring button; two-way transfers and filesystem browser and filesystem browser; iOS 7–8 experimental",
-    "compatibility": "Targets 32-bit iOS 4.0–8.x (below 9.0). Device-to-PC transfers require Receptor Desktop 1.6.0 beta 2 with receiving enabled and sharing running. Separate filesystem browsing is read-only and limited by the app’s permissions. New iOS interface and iOS 7–8 adapters need device testing; arm64 Safari is not included. Earlier user reports cover iPad 1 / iOS 5.1.1 and iPad 4 / iOS 6.1.3. IPA launch failures and DEB/device coverage remain incomplete."
+    "stage": "Experimental 1.7.0 Packages beta — APT source and tweak management and filesystem browser; iOS 7–8 experimental",
+    "compatibility": "Targets 32-bit iOS 4.0–8.x (below 9.0). New package/source operations need device validation; uses system APT/TLS and requires Cydia closed. Device-to-PC transfers require Receptor Desktop 1.6.0 beta 2 with receiving enabled and sharing running. Separate filesystem browsing is read-only and limited by the app’s permissions. New iOS interface and iOS 7–8 adapters need device testing; arm64 Safari is not included. Earlier user reports cover iPad 1 / iOS 5.1.1 and iPad 4 / iOS 6.1.3. IPA launch failures and DEB/device coverage remain incomplete."
   }
 }
