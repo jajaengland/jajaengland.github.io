@@ -6,5 +6,13 @@
     "source": "https://github.com/jajaengland/Receptor",
     "stage": "Experimental 1.8.0 beta 3 — legacy launchctl verification fix and confirmed Forget connection; device testing pending",
     "compatibility": "Targets rootful 32-bit iOS 4.0–8.x (below 9.0); iOS 7–8 experimental. Optional background desktop access requires iOS 1.8.0b3 and Windows 1.8.0 beta 1, explicit fingerprint-confirmed device setup, Windows sharing running and reachable Wi-Fi. Grants unattended package/source changes while locked, with desktop transaction confirmation. Only Receptor’s download folder is remotely exposed. Close Cydia before changes; APT uses system networking/TLS. Host integration tests pass; physical-device launchd, locked Wi-Fi, root/mobile permissions and package/source operations need validation. Earlier user reports cover iPad 1 / iOS 5.1.1 and iPad 4 / iOS 6.1.3; feature coverage remains incomplete."
+  },
+  "com.receptor.downloadmanager.ios32": {
+    "depiction": "depictions/receptor32.html",
+    "icon": "icons/receptor.png",
+    "package_icon": "file:///Applications/Receptor.app/Icon.png",
+    "source": "https://github.com/jajaengland/Receptor",
+    "stage": "Experimental iPhone OS 3.2 beta — iPad 1 only; background desktop access disabled; device testing pending",
+    "compatibility": "Separate armv7 iPad 1 package requiring firmware >=3.2 and <4.0. Conflicts with the regular Receptor package. Foreground transfers only; no background desktop daemon/enrollment. Legacy document/Photos/plist/window adapters; PNG/JPEG preview limited to 3 megapixels and 8 MB, generic grid icons. TLS rebuilt for 3.2. Built with SDK 5.0; physical-device loader, Safari hooks, UIKit, Keychain and install/root-helper behavior remain unverified. Windows 1.8.0 beta 1 is unchanged."
   }
 }
